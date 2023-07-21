@@ -42,9 +42,68 @@ public class Patterns {
         }
     }
 
+    static void floydsTriangle(int n){
+        int num = 1;
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=i;j++){
+                System.out.print(num+" ");
+                num++;
+            }
+            System.out.println();
+        }
+    }
+
+    static void binaryTriangle(int n){
+        for(int i=1;i<=n;i++){
+            for(int j=1; j<=i; j++){
+                if((i+j)%2==0){
+                    System.out.print("1 ");
+                }
+                else{
+                    System.out.print("0 ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    static void butterfly(int n){
+        for(int i=1; i<=n;i++){
+           
+                for(int k=1;k<=i;k++){
+                    System.out.print("*");
+                }
+                for(int k=1;k<=(2*(n-i));k++){
+                    System.out.print(" ");
+                }
+                for(int k=1;k<=i;k++){
+                    System.out.print("*");
+                }
+            
+            System.out.println();
+        }
+        for(int i=n; i>=1;i--){
+           
+                for(int k=1;k<=i;k++){
+                    System.out.print("*");
+                }
+                for(int k=1;k<=(2*(n-i));k++){
+                    System.out.print(" ");
+                }
+                for(int k=1;k<=i;k++){
+                    System.out.print("*");
+                }
+            
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
         hollowRectangle(3 , 5);
         invertedHalfPyramid(4, 4);
         invertedHalfPyramidWithNumbers(5);
+        floydsTriangle(5);
+        binaryTriangle(5);
+        butterfly(10);
     }
 }
