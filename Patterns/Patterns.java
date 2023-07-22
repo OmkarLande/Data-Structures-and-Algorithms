@@ -98,6 +98,57 @@ public class Patterns {
         }
     }
 
+    static void solidRhombus(int n){
+        for(int i=1; i<=n; i++){
+            for(int space=1;space<=n-i;space++){
+                System.out.print(" ");
+            }
+            for(int star=1;star<=5;star++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    static void hollowRhombus(int n){
+        for(int i=1; i<=n; i++){
+            //spaces
+            for(int k=1;k<=n-i;k++){
+                System.out.print(" ");
+            }
+            for(int j=1; j<=n;j++){
+                if(i==1 || i==n || j==1 || j==n){
+                    System.out.print("*");
+                }
+                else{
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    static void diamond(int n){
+        for(int i=1; i<=n; i++){
+            for( int space=1;space<=(n-i); space++){
+                System.out.print(" ");
+            }
+            for(int star=1; star<=(2*i-1);star++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        for(int i=n; i>=1; i--){
+            for( int space=1;space<=(n-i); space++){
+                System.out.print(" ");
+            }
+            for(int star=1; star<=(2*i-1);star++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
         hollowRectangle(3 , 5);
         invertedHalfPyramid(4, 4);
@@ -105,5 +156,8 @@ public class Patterns {
         floydsTriangle(5);
         binaryTriangle(5);
         butterfly(10);
+        solidRhombus(5);
+        hollowRhombus(5);
+        diamond(5);
     }
 }
